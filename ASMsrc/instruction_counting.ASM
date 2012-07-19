@@ -1,10 +1,17 @@
-; This program was created to test detection of instruction counting employed by tElock
-; Reference:
-; Peter Ferrie series of Unpacking for VB Magazine
-; Pedro Drimel Neto <pdrimel@qualys.com>
-; 04/2012
+; Qualys Vulnerabliity & Malware Research Labs (VMRL)
+; Blackhat 2012 Presentation Samples
+; TiTle:   A Scientific (but non academic) study of how malware employs anti-debugging,
+;          anti-disassembly and anti-virtualization technologies
+; Authors: Rodrigo Rubira Branco <rbranco *NOSPAM* qualys.com>
+;          Gabriel Negreira Barbosa <gbarbosa *NOSPAM* qualys.com>
+;          Pedro Drimel Neto <pdrimel *NOSPAM* qualys.com>
+;
+; This program was created to test detection of instruction counting implemented by tElock  (3.29)
+; references:
+; "Anti-Unpacker Tricks" by Peter Ferrie
+; "The Ultimate Anti-Debugging Reference" by Peter Ferrie
 
-include 'win32ax.inc' ; you can simply switch between win32ax, win32wx, win64ax and win64wx here
+include 'win32ax.inc'
 
 .code
 
@@ -13,7 +20,7 @@ include 'win32ax.inc' ; you can simply switch between win32ax, win32wx, win64ax 
 	push	.exception
 	push	dword [fs:eax]
 	mov	[fs:eax], esp
-	int3	; for an exception
+	int3	; force an exception
 	.labelone:
 		nop
 		nop
