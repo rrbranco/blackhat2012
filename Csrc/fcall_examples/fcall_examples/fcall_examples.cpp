@@ -590,6 +590,7 @@ void fNtSetDebugFilterState() {
 int _tmain(int argc, _TCHAR* argv[])
 {
 	fIsDebuggerPresent();
+	fCheckRemoteDebuggerPresent();
 	_getch();
 	return 0;
 }
