@@ -1,5 +1,7 @@
 Qualys Vulnerabliity & Malware Research Labs (VMRL)
+
 Blackhat 2012 Presentation Samples
+
 TiTle:	A Scientific (but non academic) study of how malware employs anti-debugging,
 		anti-disassembly and anti-virtualization technologies
 Authors: Rodrigo Rubira Branco <rbranco *NOSPAM* qualys.com>
