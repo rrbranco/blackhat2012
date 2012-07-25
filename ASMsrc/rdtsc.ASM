@@ -26,10 +26,10 @@ include 'win32ax.inc'
 	nop
 	nop
 	nop
-	rdtsc
+	rdtsc	; rdpmc or rdmsr (64 bits)
 	xor	ecx,ecx
 	add	ecx,eax
-	rdtsc
+	rdtsc	; rdpmc or rdmsr (64 bits)
 	sub	eax,ecx
 	cmp	eax,0xFFF
 	jnb    .being_debugged
