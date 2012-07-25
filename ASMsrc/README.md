@@ -15,7 +15,7 @@ Authors: Rodrigo Rubira Branco - rbranco *NOSPAM* qualys.com
 		 Gabriel Negreira Barbosa - gbarbosa *NOSPAM* qualys.com
 		 Pedro Drimel Neto - pdrimel *NOSPAM* qualys.com
 		 
-Those are the anti-debugging techniques implemented in ASM. To compile uses
+Those are the anti-debugging techniques implemented in ASM. To compile use
 flat assembly which is available at http://flatassembler.net/
 
 </pre>

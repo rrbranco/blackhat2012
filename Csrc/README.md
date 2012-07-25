@@ -19,7 +19,7 @@ The files on this directory were compiled on Visual Studio 2010
 
 Directories:
 fcall_examples - Those are anti-debugging techinques that were implemented in C/C++
-VMDetection - Those are anti-VM techniques
+VMDetection - anti-VM techniques
 
 </pre>
 </body>
