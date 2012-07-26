@@ -17,18 +17,19 @@ Authors: Rodrigo Rubira Branco  - rbranco *NOSPAM* qualys.com
 
 The samples are divided in four categories:
 	Anti-Debugging
-	Anti-VM
 	Anti-Disassembly
 	Obfuscation
-		 
+	Anti-VM
+
 Anti-Debugging POCs were developed in C/C++ using Visual Studio 2010 and Assembly
 with Flat Assembler, they are in the folder Csrc and ASMsrc, respectively.
+
+Anti-Disassembly and Obfuscation POCs were developed in Assembly with Flat Assembler and
+are available in the folder ASMsrc.
 
 Anti-VM POCs were developed in C/C++ using Visual Studio 2010 and is available in the
 Csrc folder.
 
-Anti-Disassembly and Obfuscation POCs were developed in Assembly with Flat Assembler and
-are available in the folder ASMsrc.
 
 </pre>
 </body>
