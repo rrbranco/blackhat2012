@@ -16,9 +16,10 @@ include 'win32ax.inc'
 
   start:
 	xor	eax, eax
+	push	.exception
 	push	dword [fs:0]
 	mov	[fs:0],esp
-	int1
+	int 1
 	.exception:
 		mov	eax,[esp+0x4]
 		cmp	dword[eax], 0x80000004
