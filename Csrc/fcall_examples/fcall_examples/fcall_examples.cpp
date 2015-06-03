@@ -578,7 +578,7 @@ void sGetTickCount() {
 
 	initial = GetTickCount();
 	end = GetTickCount();
-	if ((initial - end) >= 10)
+	if ((end - initial) >= 10)
 		printf("Debugger detected\n");
 	else
 		printf("Debugger not detected\n");
@@ -592,7 +592,7 @@ void stimeGetTime() {
 
 	initial = timeGetTime();
 	end = timeGetTime();
-	if ((initial - end) >= 10)
+	if ((end - initial) >= 10)
 		printf("Debugger detected\n");
 	else
 		printf("Debugger not detected\n");
@@ -608,7 +608,7 @@ void sGetSystemTime() {
 	GetSystemTime(&end);
 	SystemTimeToFileTime(&initial, &finitial);
 	SystemTimeToFileTime(&end, &fend);
-	if (((finitial.dwHighDateTime - fend.dwHighDateTime) > 10) || ((finitial.dwLowDateTime - fend.dwLowDateTime) > 10))
+	if (((fend.dwHighDateTime - finitial.dwHighDateTime) > 10) || ((fend.dwLowDateTime - finitial.dwLowDateTime) > 10))
 		printf("Debugger detected\n");
 	else
 		printf("Debugger not detected\n");
@@ -624,7 +624,7 @@ void sGetLocalTime() {
 	GetLocalTime(&end);
 	SystemTimeToFileTime(&initial, &finitial);
 	SystemTimeToFileTime(&end, &fend);
-	if (((finitial.dwHighDateTime - fend.dwHighDateTime) > 10) || ((finitial.dwLowDateTime - fend.dwLowDateTime) > 10))
+	if (((fend.dwHighDateTime - finitial.dwHighDateTime) > 10) || ((fend.dwLowDateTime - finitial.dwLowDateTime) > 10))
 		printf("Debugger detected\n");
 	else
 		printf("Debugger not detected\n");
@@ -641,7 +641,7 @@ void sQueryPerformanceCounter() {
 		if (QueryPerformanceCounter(&end)) {
 			printf("\ninitial.LowPart %02d \n" , initial.LowPart);
 			printf("\nend.LowPart %02d \n" , end.LowPart);
-			if ((initial.QuadPart - end.QuadPart) > 0x10)
+			if ((end.QuadPart - initial.QuadPart) > 0x10)
 				printf("Debugger detected\n");
 			else
 				printf("Debugger not detected\n");
@@ -750,7 +750,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	printf("19 - 3.19 FindWindow\n");
 	printf("20 - 3.20 SuspendThread\n");
 	printf("21 - 3.23 UnhandledExceptionFilter\n");
-	printf("22 - 3.24 Guard Pages\n");
+	//printf("22 - 3.24 Guard Pages\n");
 	printf("23 - 3.25 Execution Timing - GetTickCount()\n");
 	printf("24 - 3.25 Execution Timing - timeGetTime\n");
 	printf("25 - 3.25 Execution Timing - GetSystemTime()\n");
@@ -825,9 +825,9 @@ int _tmain(int argc, _TCHAR* argv[])
 	case 21:
 		fSetUnhandledExceptionFilter();
 		break;
-	case 22:
-		ret = psVirtuaAlloc_VirtualProtect();
-		break;
+	// case 22:
+	// 	ret = psVirtuaAlloc_VirtualProtect();
+	// 	break;
 	case 23:
 		sGetTickCount();
 		break;
