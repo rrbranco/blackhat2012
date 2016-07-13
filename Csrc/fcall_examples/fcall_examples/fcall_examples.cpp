@@ -96,7 +96,7 @@ void pProcessDebugPort() {
 
 	proc = GetCurrentProcess();
 	ntStatus = NtQueryInformationProcess(proc,ProcessDebugPort,&debugport,sizeof(debugport),NULL);
-	if (ntStatus != 0)
+	if (debugport != 0)
 		printf("Debugger detected\n");
 	else
 		printf("Debugger not detected\n");
